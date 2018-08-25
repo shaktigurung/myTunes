@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+/*CSS Variables */
+:root {
+  --primary-color: #b90415;
+  --primary-color-hover: #d3071b;
+  --secondary-color: #103063;
+  --primary-color-hover: #143f85;
+  --light-color: #f4f4f4;
+
+}
 
 body {
     font-family: 'PT Sans', sans-serif;
@@ -7,26 +16,15 @@ body {
     color: #fff;
     line-height: 1.6;
   }
-  /* Showcase*/
-  #showcase{
-      margin: 0;
-      padding:0;
-      background:url('../images/showcase.jpg') no-repeat center/cover;
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      overflow-y: hidden;
+  img {
+    width: 100%;
   }
-  #showcase .container{
-      margin-top: 25vh;
+  a {
+    text-decoration:none;
+    color: #ccc;
+
   }
-  #showcase h1{
-      font-size: 4rem;
-      margin-bottom: 0;
-  }
-  #showcase h2{
-      font-size: 2rem;
-  }
+  
 
   /* Utility Classes */
   .container {
@@ -38,7 +36,12 @@ body {
   .lead{
       font-size: 1.3rem;
   }
-
+  .mb{
+    margin-bottom: 1rem;
+  }
+  .mt{
+    margin-top: 1rem;
+  }
   /* Navigation */
   nav {
     height: 40px;
@@ -71,79 +74,129 @@ body {
     display: none;
   }
   
-  @media screen and (max-width: 580px) {
-  .hide-on-small{
-      display: none;
-  }
+  
+  /* Showcase*/
   #showcase{
-      height: 50vh;
-  }
-  #showcase .container{
-      margin-top: 15vh;
-  }
-  #showcase h1{
-     font-size: 3rem;
-  }
-  #showcase h2{
-    font-size: 1.5rem;
- }
+    margin: 0;
+    padding:0;
+    background:url('../images/showcase.jpg') no-repeat center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+#showcase .container{
+    margin-top: 25vh;
+}
+#showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+#showcase h2{
+    font-size: 2rem;
+}
 
-    nav {
-      height: auto;
-      border-bottom: 0;
-    }
-    nav ul {
-      display: none;
-      height: auto;
-    }
-    nav li {
-      width: 100%;
-      float: left;
-      position: relative;
-    }
-    nav a {
-      text-align: left;
-      width: 100%;
-      text-indent: 25px;
-      background: #333;
-      border-bottom: 1px solid #555;
-    }
-    nav a:hover {
-      background: #444;
-    }
-    nav a#openup:after {
-      content: "|||";
-      transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      /* IE 9 */
-      -webkit-transform: rotate(-90deg);
-      /* Safari and Chrome */
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      position: absolute;
-      right: 5px;
-      top: 20px;
-    }
-    nav a#openup {
-      display: block;
-      background-color: #333;
-      width: 100%;
-      position: relative;
-    }
+   /* Section */
+   .section {
+    padding: 2rem 0;
   }
-  .cf:before, .cf:after {
-    content: "";
-    display: table;
+  .section-head {
+    font-size: 2.5rem;
+    margin: 0;
   }
-  
-  .cf:after {
-    clear: both;
+  .section h3{
+    font-size: 2rem;
   }
-  
-  .cf {
-    zoom: 1;
+
+  /* Button */
+  .btn {
+     padding: 1rem;
+     color: #fff;
+     display: inline-block;
   }
+  .btn-primary {
+    background: var(--primary-color);
+  }
+  .btn-primary:hover {
+    background: var(--primary-color-hover);
+  }
+  .btn-secondary {
+    background: var(--secondary-color);
+  }
+  .btn-secondary:hover {
+    background: var(--secondary-color-hover);
+  }
+  /* Media Query */
+  @media screen and (max-width: 580px) {
+    .hide-on-small{
+        display: none;
+    }
+    #showcase{
+        height: 50vh;
+    }
+    #showcase .container{
+        margin-top: 15vh;
+    }
+    #showcase h1{
+       font-size: 3rem;
+    }
+    #showcase h2{
+      font-size: 1.5rem;
+   }
   
-  /* For IE 6/7 (trigger hasLayout) */
-  
+      nav {
+        height: auto;
+        border-bottom: 0;
+      }
+      nav ul {
+        display: none;
+        height: auto;
+      }
+      nav li {
+        width: 100%;
+        float: left;
+        position: relative;
+      }
+      nav a {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+        background: #333;
+        border-bottom: 1px solid #555;
+      }
+      nav a:hover {
+        background: #444;
+      }
+      nav a#openup:after {
+        content: "|||";
+        transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg);
+        /* Safari and Chrome */
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        top: 20px;
+      }
+      nav a#openup {
+        display: block;
+        background-color: #333;
+        width: 100%;
+        position: relative;
+      }
+    }
+    .cf:before, .cf:after {
+      content: "";
+      display: table;
+    }
+    
+    .cf:after {
+      clear: both;
+    }
+    
+    .cf {
+      zoom: 1;
+    }
