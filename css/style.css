@@ -4,7 +4,7 @@
   --primary-color: #b90415;
   --primary-color-hover: #d3071b;
   --secondary-color: #103063;
-  --primary-color-hover: #143f85;
+  --secondary-color-hover: #143f85;
   --light-color: #f4f4f4;
 
 }
@@ -25,7 +25,6 @@ body {
 
   }
   
-
   /* Utility Classes */
   .container {
       max-width: 1180px;
@@ -42,6 +41,43 @@ body {
   .mt{
     margin-top: 1rem;
   }
+  .text-center{
+    text-align: center;
+  }
+   /* Button */
+   .btn {
+    padding: 1rem;
+    color: #fff;
+    display: inline-block;
+    border-radius: 5px;
+
+ }
+ .btn-primary {
+   background: var(--primary-color);
+ }
+ .btn-primary:hover {
+   background: var(--primary-color-hover);
+ }
+ .btn-secondary {
+   background: var(--secondary-color);
+ }
+ .btn-secondary:hover {
+   background: var(--secondary-color-hover);
+ }
+  /*Text Colors*/
+  .text-primary {
+    color: var(--primary-color);
+  }
+  .text-secondary {
+    color: var(--secondary-color);
+  }
+  .text-light{
+    color: var(--light-color);
+  }
+  .bg-light{
+    background: var(--light-color);
+    color: #333;
+  }
   /* Navigation */
   nav {
     height: 40px;
@@ -56,7 +92,7 @@ body {
   }
   nav li {
     display: inline;
-    float: left;
+    float:left;
   }
   nav a {
     display: inline-block;
@@ -73,7 +109,6 @@ body {
   nav a#openup {
     display: none;
   }
-  
   
   /* Showcase*/
   #showcase{
@@ -108,24 +143,40 @@ body {
     font-size: 2rem;
   }
 
-  /* Button */
-  .btn {
-     padding: 1rem;
-     color: #fff;
-     display: inline-block;
+  section#entertainment{
+    background: url(../images/section-bg.jpg) no-repeat bottom/cover;
+    padding: 10rem 0;
   }
-  .btn-primary {
-    background: var(--primary-color);
+
+  .gift-cards{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
   }
-  .btn-primary:hover {
-    background: var(--primary-color-hover);
-  }
-  .btn-secondary {
-    background: var(--secondary-color);
-  }
-  .btn-secondary:hover {
-    background: var(--secondary-color-hover);
-  }
+  /* Footer */
+footer .footer-cols{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2rem;
+  text-align: left;
+  font-size: 14px;
+}
+footer .footer-cols ul{
+  list-style: none;
+}
+
+footer .footer-cols ul li:first-child{
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: #444 solid 1px;
+  margin-bottom: 1rem;
+}
+footer .footer-bottom{
+  background: #333;
+  padding: 1rem;
+}
   /* Media Query */
   @media screen and (max-width: 580px) {
     .hide-on-small{
@@ -199,4 +250,20 @@ body {
     
     .cf {
       zoom: 1;
+    }
+  
+/* To stack Gift Card section on smaller devices */
+    @media screen and (max-width: 780px) {
+      .gift-cards {
+        grid-template-columns: 1fr;
+      }
+      footer .footer-cols{
+        display: none;
+      }
+    }
+ /* Just to hide paragraph on smaller Devices */
+    @media screen and (max-height: 580px) {
+      #showcase p.lead{
+        display: none;
+      }
     }
